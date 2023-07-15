@@ -4,19 +4,39 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(
+    var(--bg-clr-1),
+    var(--bg-clr-2),
+    var(--bg-clr-3)
+  );
 }
 
 #display-container > * {
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
 }
 
 #odin-logo {
-  background-color: red;
   width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  border: 1px solid red;
 }
 
+#odin-logo svg {
+  cursor: pointer;
+  overflow: visible;
+}
+
+#odin-logo svg .helmet {
+  transform-origin: bottom;
+}
+#odin-logo svg:hover {
+  animation: pop var(--fast-animation-linear-once);
+}
+#odin-logo svg:hover .helmet {
+  animation: pop-a-little var(--fast-animation-linear-once);
+}
+#odin-logo svg:hover .eyes circle {
+  animation: pop-a-little-px var(--fast-animation-linear-once);
+}
 #ownership-container {
   position: absolute;
   bottom: 0;
@@ -24,4 +44,9 @@
   right: 0;
   padding: 0.5em 0;
   text-align: center;
+}
+
+#ownership-container p {
+  font-size: 0.75rem;
+  font-weight: 700;
 }

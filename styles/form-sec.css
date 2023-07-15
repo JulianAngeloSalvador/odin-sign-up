@@ -1,0 +1,7 @@
+#form-container {
+  --form-sec-bg: rgb(209, 206, 206);
+}
+
+#form-container {
+  background-color: var(--form-sec-bg);
+}
