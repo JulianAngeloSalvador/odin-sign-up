@@ -15,10 +15,18 @@
   --bg-clr-3: rgb(23, 23, 31);
   --main-txt-color: rgb(218, 218, 218);
 
-  --colored-txt: rgb(51, 129, 143);
+  --colored-txt: #e3b261;
 
+  --fast-transition: 0.3s ease;
+  --slow-transition: 0.5s ease;
   --fast-animation-ease-once: 0.5s ease-in-out 1;
   --fast-animation-linear-once: 0.5s ease-in-out 1;
+  --svg-animation: 2s ease forwards;
+  --svg-animation-slow: 3s ease forwards;
+  --svg-fill-animation: 0.5s ease forwards;
+  --show-eyepatch: eyepatch-scaled 0.5s ease forwards 1;
+  --appear-instant: 0.3s linear forwards;
+  --animation-hold-delay: 5s;
 }
 a {
   text-decoration: none;
@@ -26,11 +34,18 @@ a {
 
 .colored-text {
   color: var(--colored-txt);
+  transition: var(--fast-transition);
+}
+
+.colored-text:hover {
+  color: white;
+  text-shadow: 0 0 2px aqua;
 }
 body {
   height: min(100vh);
   background-color: var(--main-bg);
   width: min(100vw);
+  overflow: hidden;
 }
 
 main {
@@ -77,5 +92,173 @@ main section .svg-container {
   }
   50% {
     transform: translate(0, -10px);
+  }
+}
+
+@keyframes svg-stroke-animation {
+  0% {
+  }
+  70% {
+    filter: drop-shadow(0 0 3px aqua);
+  }
+  99% {
+    filter: drop-shadow(0 0 3px transparent);
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes svg-fill-animation {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: white;
+    filter: drop-shadow(0 0 3px aqua);
+  }
+}
+
+/* for the eyepatch */
+
+@keyframes eyepatch-scaled {
+  0% {
+  }
+  30% {
+    scale: 1.1 1;
+  }
+  70% {
+    scale: 0.75 0.65;
+  }
+
+  100% {
+    scale: 0.95 0.85;
+  }
+}
+
+/* for eyes */
+
+@keyframes eyesOpen {
+  0%,
+  15% {
+    fill: aqua;
+    transform: scale(0);
+    filter: drop-shadow(0 0 4px aqua);
+  }
+  25%,
+  85%,
+  95% {
+    fill: aqua;
+    transform: scale(1.5);
+    filter: drop-shadow(0 0 4px aqua);
+  }
+  99% {
+    fill: aqua;
+    filter: drop-shadow(0 0 4px aqua);
+  }
+  100% {
+    stroke: transparent;
+    transform: scale(1);
+  }
+}
+@keyframes mouthOpen {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes eyeFill {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: #353535;
+  }
+}
+
+/* for face */
+@keyframes faceFill {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: #eed9c3;
+  }
+}
+
+/* for beard */
+@keyframes beardFill20 {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: url(#linear-gradient);
+  }
+}
+@keyframes beardFill40 {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: url(#linear-gradient-3);
+  }
+}
+@keyframes beardFill60 {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: #e6e6e6;
+  }
+}
+@keyframes beardFill80 {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: url(#linear-gradient-4);
+  }
+}
+@keyframes beardFill100 {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: url(#linear-gradient-2);
+  }
+}
+/* for helmet */
+@keyframes helmetFillMid {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: #e3b261;
+  }
+}
+@keyframes helmetFillLeft {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: url(#linear-gradient-5);
+  }
+}
+@keyframes helmetFillRight {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: url(#linear-gradient-6);
   }
 }

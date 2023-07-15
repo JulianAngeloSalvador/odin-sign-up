@@ -11,42 +11,261 @@
   );
 }
 
-#display-container > * {
-  /* border: 1px solid pink; */
-}
-
+/* logo styles */
 #odin-logo {
   width: 200px;
-  border: 1px solid red;
 }
 
 #odin-logo svg {
   cursor: pointer;
   overflow: visible;
+  fill: transparent;
+  transition: var(--fast-transition);
+  animation: headAction 1s linear forwards 6s;
 }
 
-#odin-logo svg .helmet {
-  transform-origin: bottom;
-}
 #odin-logo svg:hover {
-  animation: pop var(--fast-animation-linear-once);
+  translate: 0 -10px;
 }
-#odin-logo svg:hover .helmet {
-  animation: pop-a-little var(--fast-animation-linear-once);
+
+@keyframes headAction {
+  0%,
+  100% {
+  }
+
+  25% {
+    transform: translate(0, -20px);
+  }
+  50% {
+    transform: translate(0, 5px);
+  }
+  75% {
+    transform: translate(0, -10px);
+  }
 }
-#odin-logo svg:hover .eyes circle {
-  animation: pop-a-little-px var(--fast-animation-linear-once);
+
+#odin-logo svg g > * {
+  animation: svg-stroke-animation var(--svg-animation);
+  animation-duration: 4s;
+  animation-delay: 2s;
+  transform-origin: center;
+  transform-box: fill-box;
 }
+
+#odin-logo svg #Face path {
+  stroke-dasharray: 456.9px;
+  stroke-dashoffset: 456.9px;
+}
+
+#odin-logo svg .eyes circle {
+  transform: scale(0);
+  fill: #353535;
+  animation: eyesOpen var(--svg-animation);
+  animation-duration: 5s;
+}
+
+#odin-logo svg #Mouth path {
+  transform: scale(0);
+  animation: mouthOpen var(--appear-instant);
+  animation-delay: 5s;
+}
+#odin-logo svg .beard path {
+  animation: svg-stroke-animation var(--svg-animation-slow);
+  /* stroke-dasharray: calc(343.1px + 70.5px + 382.1px + 678.8px + 537.3px);
+  stroke-dashoffset: calc(343.1px + 70.5px + 382.1px + 678.8px + 537.3px); */
+  stroke-dasharray: 1518px;
+  stroke-dashoffset: -1518px;
+}
+#odin-logo svg #Helmet path:nth-child(1) {
+  stroke-dasharray: 678.8px;
+  stroke-dashoffset: -678.8px;
+}
+#odin-logo svg #Helmet path:nth-child(2) {
+  stroke-dasharray: 882.1px;
+  stroke-dashoffset: 882.1px;
+}
+
+#odin-logo svg #Helmet path:nth-child(3) {
+  stroke-dasharray: 876.3px;
+  stroke-dashoffset: 876.3px;
+}
+
+#odin-logo svg .eyes {
+  animation: eyeFill var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+}
+#Face {
+  animation: faceFill var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+}
+
+#Mouth {
+  fill: #353535;
+}
+
+#Beard-Area-20 {
+  /*10*/
+  animation: beardFill20 var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+}
+#Beard-Area-40 {
+  stroke: none;
+  /*9*/
+  animation: beardFill40 var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+}
+#Beard-Area-60 {
+  /*5*/
+  animation: beardFill60 var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+}
+#Beard-Area-80 {
+  /*11*/
+  animation: beardFill80 var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+}
+#Beard-Area-100 {
+  /*2*/
+  animation: beardFill100 var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+}
+
+#odin-logo svg #Eye-Patch path {
+  stroke: transparent;
+  transform-origin: center;
+  transform-box: fill-box;
+  scale: 0;
+  fill: #a78347;
+  animation: var(--show-eyepatch);
+  animation-delay: 6s;
+}
+
+#Helmet path:nth-child(1) {
+  animation: helmetFillMid var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+  /*1*/
+}
+#Helmet path:nth-child(2) {
+  animation: helmetFillLeft var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+  /*6*/
+}
+#Helmet path:nth-child(3) {
+  animation: helmetFillRight var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+  /*3*/
+}
+/* title style */
+
+#odin-title svg {
+  animation: svg-fill-animation var(--svg-fill-animation);
+  animation-delay: var(--animation-hold-delay);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#odin-title svg path {
+  stroke: white;
+  animation: svg-stroke-animation var(--svg-animation)
+    calc(var(--letter-order) * 0.22s);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#odin-title svg path:nth-child(1) {
+  stroke-dasharray: 182.1px;
+  stroke-dashoffset: 182.1px;
+  --letter-order: 1;
+}
+#odin-title svg path:nth-child(2) {
+  stroke-dasharray: 296.1px;
+  stroke-dashoffset: 296.1px;
+  --letter-order: 2;
+}
+#odin-title svg path:nth-child(3) {
+  stroke-dasharray: 222.5px;
+  stroke-dashoffset: 222.5px;
+  --letter-order: 3;
+}
+#odin-title svg path:nth-child(4) {
+  stroke-dasharray: 250.6px;
+  stroke-dashoffset: 250.6px;
+  --letter-order: 4;
+}
+#odin-title svg path:nth-child(5) {
+  stroke-dasharray: 246.7px;
+  stroke-dashoffset: 246.7px;
+  --letter-order: 5;
+}
+#odin-title svg path:nth-child(6) {
+  stroke-dasharray: 144.8px;
+  stroke-dashoffset: 144.8px;
+  --letter-order: 6;
+}
+#odin-title svg path:nth-child(7) {
+  stroke-dasharray: 302px;
+  stroke-dashoffset: 302px;
+  --letter-order: 7;
+}
+#odin-title svg path:nth-child(8) {
+  stroke-dasharray: 211.2px;
+  stroke-dashoffset: 211.2px;
+  --letter-order: 8;
+}
+#odin-title svg path:nth-child(9) {
+  stroke-dasharray: 274.8px;
+  stroke-dashoffset: 274.8px;
+  --letter-order: 9;
+}
+#odin-title svg path:nth-child(10) {
+  stroke-dasharray: 250.6px;
+  stroke-dashoffset: 250.6px;
+  --letter-order: 10;
+}
+#odin-title svg path:nth-child(11) {
+  stroke-dasharray: 151.8px;
+  stroke-dashoffset: 151.8px;
+  --letter-order: 11;
+}
+#odin-title svg path:nth-child(12) {
+  stroke-dasharray: 222.5px;
+  stroke-dashoffset: 222.5px;
+  --letter-order: 12;
+}
+#odin-title svg path:nth-child(13) {
+  stroke-dasharray: 159.1px;
+  stroke-dashoffset: 159.1px;
+  --letter-order: 13;
+}
+#odin-title svg path:nth-child(14) {
+  stroke-dasharray: 182.1px;
+  stroke-dashoffset: 182.1px;
+  --letter-order: 14;
+}
+
+/* ownership style */
 #ownership-container {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 0.5em 0;
+  opacity: 0;
   text-align: center;
+  animation: ownershipAppear 1s linear forwards 5s;
+}
+
+@keyframes ownershipAppear {
+  to {
+    opacity: 1;
+  }
 }
 
 #ownership-container p {
   font-size: 0.75rem;
   font-weight: 700;
+  word-spacing: 2px;
+}
+
+#ownership-container p .colored-text {
+  display: inline-block;
 }

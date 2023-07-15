@@ -1,0 +1,18 @@
+Helmet:
+E3B261 - light
+E1A94F - mid 
+DBA141 - dark
+
+Beard:
+E6E6E6 - light
+C9C9C9 - dark
+
+Skin:
+EED9C3 
+
+Eyes & Mouth:
+353535
+
+Patch:
+a78347
+
