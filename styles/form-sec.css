@@ -1,7 +1,105 @@
 #form-container {
+  --form-txt-clr: #353535;
   --form-sec-bg: rgb(209, 206, 206);
+  background-color: var(--form-sec-bg);
+  /* border: 2px solid red; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 100px 50px;
 }
 
-#form-container {
+/* #form-container > * {
+  border: 1px solid orange;
+} */
+
+#formHeader {
+  color: var(--form-txt-clr);
+  font-size: 3rem;
+  align-self: flex-start;
+  margin-left: 40px;
+}
+#registerForm {
+  position: relative;
+  width: clamp(300px, 80%, 1000px);
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px 25px;
+}
+
+#registerForm fieldset {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+fieldset,
+input {
+  outline: none;
+  border: none;
+}
+.labelAlternative,
+input {
+  color: var(--form-txt-clr);
+}
+.labelAlternative {
+  position: absolute;
+  pointer-events: none;
+  padding: 2.5px 10px;
+  translate: 20px 0;
+  transition: var(--fast-transition);
+  overflow: visible;
+  z-index: 20;
+}
+
+#registerForm fieldset input:focus + .labelAlternative {
+  translate: 20px -90%;
   background-color: var(--form-sec-bg);
+}
+
+#registerForm fieldset input:focus {
+  box-shadow: 0 10px 8px var(--faded-txt-light);
+}
+
+#registerForm fieldset input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--faded-txt-light);
+  background-color: transparent;
+  transition: var(--fast-transition);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+#registerForm .form-buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-buttons-container button {
+  font-size: 1.25rem;
+  padding: 6px 20px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--valid-base-clr);
+  cursor: pointer;
+}
+
+.form-buttons-container button:hover {
+  animation: pop-a-little var(--slow-transition);
 }

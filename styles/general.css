@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: 0;
-  font-family: "Tsukimi Rounded", "Poppins", sans-serif;
+  /* font-family: "Tsukimi Rounded", "Poppins", sans-serif; */
+  font-family: "Poppins", sans-serif;
   color: var(--main-txt-color);
 }
 
@@ -16,6 +17,8 @@
   --main-txt-color: rgb(218, 218, 218);
 
   --colored-txt: #e3b261;
+  --faded-txt-light: rgba(100, 100, 100, 0.5);
+  --valid-base-clr: rgb(89, 146, 92);
 
   --fast-transition: 0.3s ease;
   --slow-transition: 0.5s ease;
@@ -27,6 +30,8 @@
   --show-eyepatch: eyepatch-scaled 0.5s ease forwards 1;
   --appear-instant: 0.3s linear forwards;
   --animation-hold-delay: 5s;
+
+  --neon: aqua;
 }
 a {
   text-decoration: none;
@@ -39,27 +44,23 @@ a {
 
 .colored-text:hover {
   color: white;
-  text-shadow: 0 0 2px aqua;
-}
-body {
-  height: min(100vh);
-  background-color: var(--main-bg);
-  width: min(100vw);
-  overflow: hidden;
+  text-shadow: 0 0 2px var(--neon);
 }
 
-main {
-  width: 100%;
-  height: 100%;
+body {
+  background-color: var(--main-bg);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: 40% 60%;
 }
 
-main section {
+/* main section > * {
   border: 1px solid green;
-}
+} */
 
-main section .svg-container {
+section .svg-container {
   width: 400px;
   padding: 1em;
   display: flex;
@@ -99,7 +100,7 @@ main section .svg-container {
   0% {
   }
   70% {
-    filter: drop-shadow(0 0 3px aqua);
+    filter: drop-shadow(0 0 3px var(--neon));
   }
   99% {
     filter: drop-shadow(0 0 3px transparent);
@@ -116,7 +117,7 @@ main section .svg-container {
 
   to {
     fill: white;
-    filter: drop-shadow(0 0 3px aqua);
+    filter: drop-shadow(0 0 3px var(--neon));
   }
 }
 
@@ -142,20 +143,20 @@ main section .svg-container {
 @keyframes eyesOpen {
   0%,
   15% {
-    fill: aqua;
+    fill: var(--neon);
     transform: scale(0);
-    filter: drop-shadow(0 0 4px aqua);
+    filter: drop-shadow(0 0 4px var(--neon));
   }
   25%,
   85%,
   95% {
-    fill: aqua;
+    fill: var(--neon);
     transform: scale(1.5);
-    filter: drop-shadow(0 0 4px aqua);
+    filter: drop-shadow(0 0 4px var(--neon));
   }
   99% {
-    fill: aqua;
-    filter: drop-shadow(0 0 4px aqua);
+    fill: var(--neon);
+    filter: drop-shadow(0 0 4px var(--neon));
   }
   100% {
     stroke: transparent;

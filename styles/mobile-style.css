@@ -1,0 +1,62 @@
+/* for mobile */
+
+/* general */
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: linear-gradient(
+      var(--bg-clr-1),
+      var(--bg-clr-2),
+      var(--bg-clr-3)
+    );
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* display styles mobile */
+  #display-container {
+    background-image: none;
+  }
+  #odin-logo {
+    width: 100px;
+  }
+
+  #odin-logo svg {
+    margin-top: 50px;
+  }
+
+  #odin-title svg {
+    width: 200px;
+    transform: translate(0, -20px);
+  }
+
+  #ownership-container {
+    bottom: 1em;
+  }
+  #ownership-container p {
+    font-size: 0.65rem;
+  }
+  #form-container {
+    background-color: transparent;
+    padding: 0;
+  }
+  #formHeader {
+    color: var(--main-txt-color);
+    font-size: 1.25rem;
+  }
+
+  #registerForm {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 30px 0;
+    place-items: center;
+  }
+  #registerForm fieldset label {
+    font-size: 1rem;
+  }
+  #registerForm fieldset input {
+    padding: 5px;
+    width: 100%;
+  }
+}
