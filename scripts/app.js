@@ -114,4 +114,4 @@ nameInputs.forEach(function (input) {
   });
 });
 
-formSubmit.addEventListener("click", () => {});
+
