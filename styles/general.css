@@ -20,7 +20,7 @@
 
   --colored-txt: #e3b261;
   --faded-txt-light: rgba(100, 100, 100, 0.5);
-  --valid-base-clr: rgb(95, 177, 99);
+  --valid-base-clr: rgb(74, 138, 77);
   --valid-interact-clr: rgb(100, 160, 103);
   --invalid-base-color: red;
 
@@ -59,11 +59,9 @@ body {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-template-rows: 1fr;
+  position: relative;
+  overflow: hidden;
 }
-
-/* main section > * {
-  border: 1px solid green;
-} */
 
 section .svg-container {
   width: 400px;

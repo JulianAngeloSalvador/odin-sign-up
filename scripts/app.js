@@ -78,6 +78,16 @@ inputFields.forEach(function (input) {
   });
 });
 
+// const inputLabel = input.nextElementSibling;
+
+// input.addEventListener("focus", function () {
+//   inputLabel.classList.add("label-levitate");
+// });
+
+// input.addEventListener("blur", function () {
+//   inputLabel.classList.remove("label-levitate");
+// });
+
 confirmPass.addEventListener("input", function (event) {
   const popover = confirmPass.parentElement.querySelector(".error-popover");
   if (confirmPass.value !== pass.value) {
@@ -88,16 +98,6 @@ confirmPass.addEventListener("input", function (event) {
     formSubmit.disabled = false;
   }
 });
-
-// const inputLabel = input.nextElementSibling;
-
-// input.addEventListener("focus", function () {
-//   inputLabel.classList.add("label-levitate");
-// });
-
-// input.addEventListener("blur", function () {
-//   inputLabel.classList.remove("label-levitate");
-// });
 
 //Limiting names
 // Get all input fields with data-type="name"
@@ -113,3 +113,5 @@ nameInputs.forEach(function (input) {
     this.value = filteredValue;
   });
 });
+
+formSubmit.addEventListener("click", () => {});

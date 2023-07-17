@@ -1,0 +1,62 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginDemo {
+  border: 1px solid var(--faded-txt-light);
+  padding: 1em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+#loginDemo h1 {
+  align-self: flex-start;
+}
+
+#loginDemo a {
+  background-color: var(--valid-base-clr);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+main {
+  opacity: 0;
+
+  animation: appear 1s ease forwards;
+}
+
+@keyframes appear {
+  0% {
+  }
+
+  20% {
+    translate: 0 -120px;
+  }
+  40% {
+    translate: 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+  60% {
+    translate: 0;
+  }
+
+  70% {
+    translate: 0 -2px;
+  }
+  100% {
+    opacity: 1;
+    scale: 1.2;
+  }
+}

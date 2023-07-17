@@ -190,3 +190,18 @@ input[type="number"] {
   width: 100%;
   left: 0;
 }
+
+#form-container > * {
+  opacity: 0;
+  translate: 0 10px;
+  animation: formContentsAppear 0.3s ease forwards 0.4s;
+  pointer-events: none;
+}
+
+@keyframes formContentsAppear {
+  to {
+    translate: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
+}
