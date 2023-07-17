@@ -40,23 +40,69 @@
   #form-container {
     background-color: transparent;
     padding: 0;
+    gap: 40px;
+    align-items: center;
   }
   #formHeader {
     color: var(--main-txt-color);
     font-size: 1.25rem;
+    padding-left: 20px;
+    align-self: flex-start;
   }
 
   #registerForm {
-    grid-template-columns: 1fr;
-    padding: 20px;
-    gap: 30px 0;
-    place-items: center;
+    padding: 10px;
+    gap: 40px 0;
+    display: flex;
+    flex-direction: column;
   }
-  #registerForm fieldset label {
-    font-size: 1rem;
+  #registerForm fieldset {
+    overflow: visible;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  #registerForm .labelAlternative {
+    color: white;
+    flex: 1;
+    translate: 0;
+    align-self: flex-start;
+    padding: 0;
+    translate: 0 -40px;
+  }
+  #registerForm fieldset input:focus + .labelAlternative,
+  #registerForm fieldset input:valid + .labelAlternative {
+    background-color: transparent;
+    color: white;
+    translate: 0 -40px;
   }
   #registerForm fieldset input {
     padding: 5px;
+    flex: 1;
     width: 100%;
+    border: 1px solid var(--faded-txt-light);
+    color: white;
+    background-color: transparent !important;
+  }
+  .label-levitate {
+    background-color: transparent !important;
+  }
+
+  #registerForm fieldset input:focus {
+    box-shadow: none;
+    border: 1px solid white;
+  }
+
+  #registerForm .form-buttons-container {
+    justify-content: center;
+    gap: 10px;
+  }
+  .form-buttons-container button {
+    font-size: 0.75rem;
+    padding: 6px 20px;
+    border-radius: 5px;
+  }
+
+  #loginContainer {
+    align-self: center;
   }
 }

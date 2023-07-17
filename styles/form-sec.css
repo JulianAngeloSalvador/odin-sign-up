@@ -7,27 +7,29 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  padding: 100px 50px;
+  padding: 50px;
+  gap: 20px 10px;
 }
 
 /* #form-container > * {
   border: 1px solid orange;
+}
+#registerForm > * {
+  border: 1px solid red;
 } */
 
 #formHeader {
   color: var(--form-txt-clr);
-  font-size: 3rem;
-  align-self: flex-start;
-  margin-left: 40px;
+  font-size: 2.5rem;
 }
+
 #registerForm {
   position: relative;
   width: clamp(300px, 80%, 1000px);
-  padding: 2em;
+  padding: 0.5em;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 35px 25px;
+  gap: 45px;
 }
 
 #registerForm fieldset {
@@ -49,28 +51,42 @@ input {
 .labelAlternative {
   position: absolute;
   pointer-events: none;
-  padding: 2.5px 10px;
+  padding: 2.15px 10px;
   translate: 20px 0;
   transition: var(--fast-transition);
   overflow: visible;
   z-index: 20;
+  opacity: 1;
+  color: var(--faded-txt-light);
 }
 
 #registerForm fieldset input:focus + .labelAlternative {
   translate: 20px -90%;
   background-color: var(--form-sec-bg);
+  color: var(--form-txt-clr);
+}
+
+.label-levitate {
+  translate: 20px -90%;
+  background-color: var(--form-sec-bg);
+  color: var(--form-txt-clr);
 }
 
 #registerForm fieldset input:focus {
   box-shadow: 0 10px 8px var(--faded-txt-light);
 }
 
+#registerForm fieldset input:valid + .labelAlternative {
+  color: var(--form-txt-clr);
+  translate: 20px -90%;
+  background-color: var(--form-sec-bg);
+}
 #registerForm fieldset input {
   width: 100%;
   padding: 1rem;
   border-radius: 6px;
   border: 1px solid var(--faded-txt-light);
-  background-color: transparent;
+  background-color: var(--form-sec-bg) !important;
   transition: var(--fast-transition);
 }
 
@@ -98,8 +114,79 @@ input[type="number"] {
   border-radius: 10px;
   background-color: var(--valid-base-clr);
   cursor: pointer;
+  transition: var(--fast-transition);
 }
 
-.form-buttons-container button:hover {
+.error-popover {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  width: 180px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  transition: var(--fast-transition);
+}
+
+.error-popover p {
+  text-align: center;
+  width: fit-content;
+  color: var(--invalid-base-color);
+}
+
+#submitBtn:hover {
+  background-color: var(--valid-interact-clr);
+}
+
+#loginContainer {
+  margin-top: 20px;
+  align-self: flex-start;
+  font-size: 1.15rem;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+#loginContainer p {
+  color: var(--form-txt-clr);
+}
+
+#toLogBtn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--colored-txt);
+  font-weight: 800;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--slow-transition);
+  align-self: baseline;
+  position: relative;
+  word-spacing: 2px;
+}
+
+#toLogBtn:hover {
   animation: pop-a-little var(--slow-transition);
+}
+
+#toLogBtn:after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 105%;
+  background-color: var(--colored-txt);
+  width: 0%;
+  height: 4px;
+  border-radius: 1px;
+  transition: var(--fast-transition);
+}
+#toLogBtn:hover:after {
+  width: 100%;
+  left: 0;
 }

@@ -17,7 +17,6 @@
 }
 
 #odin-logo svg {
-  cursor: pointer;
   overflow: visible;
   fill: transparent;
   transition: var(--fast-transition);

@@ -241,16 +241,22 @@
       <h1 id="formHeader">Sign-Up</h1>
       <form id="registerForm" action="" method="post">
         <fieldset>
-          <input type="text" name="first_name" id="firstName" />
+          <input
+            type="text"
+            name="first_name"
+            id="firstName"
+            data-type="name"
+          />
           <span class="labelAlternative" id="firstNameLabel">First Name</span>
         </fieldset>
         <fieldset>
-          <input type="text" name="last_name" id="lastName" />
+          <input type="text" name="last_name" id="lastName" data-type="name" />
           <span class="labelAlternative" id="lastNameLabel">Last Name</span>
         </fieldset>
         <fieldset>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="email" autocomplete="off" />
           <span class="labelAlternative" id="emailLabel">E-mail</span>
+          <div class="error-popover"><p>Please enter a valid e-mail</p></div>
         </fieldset>
         <fieldset>
           <input
@@ -263,7 +269,13 @@
           <span class="labelAlternative" id="contactLabel">Contact</span>
         </fieldset>
         <fieldset>
-          <input type="password" name="password" id="password" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            minlength="6"
+            maxlength="20"
+          />
           <span class="labelAlternative" id="passwordLabel">Password</span>
         </fieldset>
         <fieldset>
@@ -275,11 +287,16 @@
           <span class="labelAlternative" id="confirmPassLabel"
             >Confirm Password</span
           >
+          <div class="error-popover"><p>Passwords do not match</p></div>
         </fieldset>
         <div class="form-buttons-container">
           <button type="submit" id="submitBtn">Create Account</button>
         </div>
       </form>
+      <div id="loginContainer">
+        <p>Already have an account?</p>
+        <button id="toLogBtn">Log in</button>
+      </div>
     </section>
 
     <script src="scripts/app.js"></script>
